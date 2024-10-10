@@ -1,6 +1,6 @@
 --98 Where ja Having erinevused.rtf 
 
---Loome tabeli Sales ja sisestame andmed
+--Loome tabel Sales ja sisesta andmed
 CREATE TABLE Sales (
     Product NVARCHAR(50),
     SaleAmount INT
@@ -34,7 +34,7 @@ FROM Sales
 GROUP BY Product
 WHERE SUM(SaleAmount) > 1000
 
---Kalkuleeri iPhone-i ja Speakerite müüki ja kasuta selleks HAVING klauslit. See näide pärib kõik read Sales tabelis, mis näitavad summat ning eemaldavad kõik tooted peale iPhone-i ja Speakerite.
+--Sales tabelis, mis näitavad summat ning eemaldavad kõik tooted peale iPhone-i ja Speakerite
 SELECT Product, SUM(SaleAmount) as TotalSales
 FROM Sales
 WHERE Product in ('iPhone','Speakers')
@@ -48,7 +48,7 @@ HAVING Product in ('iPhone','Speakers')
 
 
 --87. Except operaator.rtf 
---Loome ja sisestame andmed
+--Kood selle sisestamiseks:
 CREATE TABLE TableA (
     Id INT PRIMARY KEY,
     Name NVARCHAR(50),
